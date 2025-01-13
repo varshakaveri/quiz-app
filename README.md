@@ -1,17 +1,60 @@
-To run and test the application, please follow these steps:
+How to Run and Test the Quiz Application
+To run and test the application locally, follow these steps:
 
-Clone the repository:
-Use the command: git clone <repository-link>
+Prerequisites
+Ensure Java JDK is installed on your system.
+Make sure Maven is installed. If not, download and install it from Maven's official website.
+Steps
+Clone the Repository: Clone the repository using Git by running the following command in your terminal or command prompt:
 
-Navigate to the project directory:
-Use the command: cd <directory-name>
+bash
+Copy code
+git clone <repository-link>
+Replace <repository-link> with the actual URL of your Git repository.
 
-Build and run the application:
-Use the command: mvn spring-boot:run (Ensure Maven is installed on your system).
+Navigate to the Project Directory: Change directory to the project folder:
 
-Test the application using Postman:
+bash
+Copy code
+cd <directory-name>
+Replace <directory-name> with the name of your project directory.
 
-Start Postman and set the request method to GET/POST (based on the endpoint).
-Use the following URL(s) to test:
-Example endpoint: http://localhost:8080/<endpoint>
-Include any required request parameters or body (as specified in the README file in the repository).
+Build and Run the Application: Use Maven to build and run the Spring Boot application:
+
+bash
+Copy code
+mvn spring-boot:run
+This command will download dependencies, compile the code, and start the application on http://localhost:8080.
+
+Testing with Postman:
+
+Start Postman (if not already running).
+Set the request method to GET, POST, or PUT as specified by the endpoint you want to test.
+Use the following base URL to test endpoints:
+arduino
+Copy code
+http://localhost:8080
+Include any required request parameters or body according to the API endpoint documentation provided in the README.md file within the repository.
+Example Endpoints:
+
+Start Quiz Session:
+bash
+Copy code
+POST http://localhost:8080/api/quiz/start
+Get Random Question:
+bash
+Copy code
+GET http://localhost:8080/api/quiz/question
+Submit Answer:
+bash
+Copy code
+POST http://localhost:8080/api/quiz/answer
+Include a JSON body with questionId and answer fields.
+Get Quiz Results:
+bash
+Copy code
+GET http://localhost:8080/api/quiz/results
+Additional Information:
+
+Ensure the H2 database console is accessible at http://localhost:8080/h2-console for database management.
+
